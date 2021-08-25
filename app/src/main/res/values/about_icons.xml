@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ic_analyze">
+        <item>srip</item>
+        <item>flaticon.com</item>
+        <item>https://www.flaticon.com/free-icon/search_1265849</item>
+    </string-array>
+
+    <string-array name="ic_generator">
+        <item>Freepik</item>
+        <item>flaticon.com</item>
+        <item>https://www.flaticon.com/free-icon/password-box-with-asterisks_48808</item>
+    </string-array>
+
+    <string-array name="ic_libraries">
+        <item>Freepik</item>
+        <item>flaticon.com</item>
+        <item>https://www.flaticon.com/free-icon/books-stack-of-three_29302</item>
+    </string-array>
+
+    <string-array name="ic_question">
+        <item>Freepik</item>
+        <item>flaticon.com</item>
+        <item>https://www.flaticon.com/free-icon/information_906794</item>
+    </string-array>
+
+    <string-array name="ic_ranking">
+        <item>Freepik</item>
+        <item>flaticon.com</item>
+        <item>https://www.flaticon.com/free-icon/ranking_3487157</item>
+    </string-array>
+
+</resources>

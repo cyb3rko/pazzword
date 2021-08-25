@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_analyze">
+
+    <fragment
+        android:id="@+id/navigation_analyze"
+        android:name="com.cyb3rko.pazzword.fragments.analyzefragment.AnalyzeFragment"
+        android:label="@string/topbar_analyze"
+        tools:layout="@layout/fragment_analyze" />
+
+    <fragment
+        android:id="@+id/navigation_ranking"
+        android:name="com.cyb3rko.pazzword.fragments.RankingFragment"
+        android:label="@string/topbar_ranking"
+        tools:layout="@layout/fragment_ranking" />
+
+    <fragment
+        android:id="@+id/navigation_generator"
+        android:name="com.cyb3rko.pazzword.fragments.GeneratorFragment"
+        android:label="@string/topbar_generator"
+        tools:layout="@layout/fragment_generator" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.cyb3rko.pazzword.fragments.AboutFragment"
+        android:label="@string/about" />
+
+    <fragment
+        android:id="@+id/navigation_about_icons"
+        android:name="com.cyb3rko.pazzword.fragments.AboutIconsFragment"
+        android:label="@string/topbar_credits" />
+
+    <fragment
+        android:id="@+id/navigation_about_animations"
+        android:name="com.cyb3rko.pazzword.fragments.AboutAnimationsFragment"
+        android:label="@string/topbar_credits" />
+
+</navigation>

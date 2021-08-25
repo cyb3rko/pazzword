@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_analyze"
+        android:icon="@drawable/_ic_analyze"
+        android:title="@string/title_analyze" />
+
+    <item
+        android:id="@+id/navigation_ranking"
+        android:icon="@drawable/_ic_ranking"
+        android:title="@string/title_ranking" />
+
+    <item
+        android:id="@+id/navigation_generator"
+        android:icon="@drawable/_ic_generator"
+        android:title="@string/title_generator" />
+
+</menu>

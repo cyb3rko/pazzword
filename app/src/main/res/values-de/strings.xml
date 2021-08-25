@@ -1,0 +1,55 @@
+<resources>
+    <string name="title_analyze">Analyse</string>
+    <string name="title_ranking">Rangliste</string>
+    <string name="title_generator">Generator</string>
+
+    <string name="topbar_analyze">Pazzword - Analyse</string>
+    <string name="topbar_ranking">Pazzword - Rangliste</string>
+    <string name="topbar_generator">Pazzword - Generator</string>
+    <string name="topbar_credits">Credits</string>
+
+    <string name="security_banner_secure">SICHER</string>
+    <string name="security_banner_insecure">UNSICHER</string>
+
+    <string name="password_input_helpertext">Analysiert mit Nbvcxz</string>
+    <string name="password_input_hint">Gib ein Passwort ein</string>
+    <string name="warning_caption">Warnung</string>
+    <string name="information_caption">Informationen</string>
+    <string name="basic_score_title">Einfache Punktzahl</string>
+    <string name="entropy_title">Entropie</string>
+    <string name="random_title">Vermutlich zufällig</string>
+    <string name="suggestions_caption">Vorschläge</string>
+    <string name="matches_caption">Übereinstimmungen</string>
+    <string name="cracking_caption">Cracken</string>
+    <string name="guesses_title">Versuche</string>
+    <string name="offline_md5_title">Offline MD5</string>
+    <string name="offline_sha512_title">Offline SHA512</string>
+    <string name="offline_bcrypt10_title">Offline bcrypt10</string>
+    <string name="offline_bcrypt14_title">Offline bcrypt14</string>
+    <string name="online_unthrottled_title">Online Ungedrosselt</string>
+    <string name="online_throttled_title">Online Gedrosselt</string>
+
+    <string name="top200_passwords_caption">Top 200 der häufigsten Passwörter des Jahres 2020</string>
+    <string name="top200_passwords_source">Quelle: nordpass.com</string>
+    <string name="top200_passwords_censored">Schimpfwörter zensiert mit \'*\'</string>
+
+    <string name="clipboard_info">Password in Zwischenablage kopiert</string>
+
+    <string name="feedback_bug_report">Feedback / Bugmeldung</string>
+    <string name="about_icons_title">Benutzte Icons</string>
+    <string name="about_animations_description">%1$s Animation von %2$s</string>
+
+    <string name="about">Über</string>
+    <string name="about_description">Die intelligenteste Passwort-Evaluierungs-App</string>
+    <string name="about_element_version">Version %1$s (%2$d) — Änderungsprotokoll</string>
+    <string name="about_group_legal">Rechtliches</string>
+    <string name="about_element_libraries">Benutzte Libraries</string>
+    <string name="about_element_icons">Benutzte Icons</string>
+    <string name="about_element_animations">Benutzte Animationen</string>
+    <string name="about_group_connect">Stelle Kontakt mit mir her</string>
+    <string name="about_element_feedback_text">Besuche und gebe Feedback auf GitHub</string>
+    <string name="about_element_email_text">Kontaktiere mich</string>
+    <string name="about_element_youtube_text">Sieh dir meine Tutorial-Videos an</string>
+    <string name="about_element_github_text">Schau dir meine anderen Projekte an</string>
+    <string name="about_element_instagram_text">Folge mir</string>
+</resources>

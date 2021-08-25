@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name" translatable="false">Pazzword</string>
+    <string name="title_analyze">Analyze</string>
+    <string name="title_ranking">Ranking</string>
+    <string name="title_generator">Generator</string>
+
+    <string name="topbar_analyze">Pazzword - Analyze</string>
+    <string name="topbar_ranking">Pazzword - Ranking</string>
+    <string name="topbar_generator">Pazzword - Generator</string>
+    <string name="topbar_credits">Credits</string>
+
+    <string name="security_banner_secure">SECURE</string>
+    <string name="security_banner_insecure">INSECURE</string>
+
+    <string name="password_input_helpertext">Analyzed with Nbvcxz</string>
+    <string name="password_input_hint">Type a password</string>
+    <string name="warning_caption">Warning</string>
+    <string name="information_caption">Information</string>
+    <string name="basic_score_title">Basic Score</string>
+    <string name="entropy_title">Entropy</string>
+    <string name="random_title">Considered Random</string>
+    <string name="suggestions_caption">Suggestions</string>
+    <string name="matches_caption">Matches</string>
+    <string name="cracking_caption">Cracking</string>
+    <string name="guesses_title">Guesses</string>
+    <string name="offline_md5_title">Offline MD5</string>
+    <string name="offline_sha512_title">Offline SHA512</string>
+    <string name="offline_bcrypt10_title">Offline bcrypt10</string>
+    <string name="offline_bcrypt14_title">Offline bcrypt14</string>
+    <string name="online_unthrottled_title">Online Unthrottled</string>
+    <string name="online_throttled_title">Online Throttled</string>
+
+    <string name="top200_passwords_caption">Top 200 most common passwords of 2020</string>
+    <string name="top200_passwords_source">Source: nordpass.com</string>
+    <string name="top200_passwords_censored">Swear words censored with \'*\'</string>
+
+    <string name="clipboard_info">Copied password to clipboard</string>
+
+    <string name="feedback_bug_report">Feedback / Bug Report</string>
+    <string name="about_icons_title">Used Icons</string>
+    <string name="about_animations_description">%1$s animation by %2$s</string>
+
+    <string name="about">About</string>
+    <string name="about_description">The most intelligent password evaluator app</string>
+    <string name="about_element_version">Version %1$s (%2$d) — Changelog</string>
+    <string name="about_group_legal">Legal</string>
+    <string name="about_element_libraries">Used Libraries</string>
+    <string name="about_element_icons">Used Icons</string>
+    <string name="about_element_animations">Used Animations</string>
+    <string name="about_group_connect">Connect with me</string>
+    <string name="about_element_feedback_text">Visit and give feedback on GitHub</string>
+    <string name="about_element_email_text">Contact me</string>
+    <string name="about_element_youtube_text">Watch my tutorial videos (in German)</string>
+    <string name="about_element_github_text">Take a look at my other projects</string>
+    <string name="about_element_instagram_text">Follow me</string>
+</resources>

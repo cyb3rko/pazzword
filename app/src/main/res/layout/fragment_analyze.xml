@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.analyzefragment.AnalyzeFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="20dp"
+        app:endIconMode="password_toggle"
+        app:counterEnabled="true"
+        app:helperTextEnabled="true"
+        app:helperText="@string/password_input_helpertext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:hint="@string/password_input_hint"
+            android:imeOptions="actionGo"
+            tools:ignore="HardcodedText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/waiting_animation_view"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        app:lottie_fileName="password_unlock.json"
+        app:lottie_loop="false"
+        app:lottie_autoPlay="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        tools:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp">
+
+            <Space
+                android:id="@+id/space1"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/security_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintTop_toBottomOf="@id/space1"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/security_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/space1"
+                    tools:background="@drawable/sec_banner_bg_green">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animation_view"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        app:lottie_loop="false"
+                        app:lottie_speed="0.75" />
+
+                    <TextView
+                        android:id="@+id/security_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="SECURE" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/warning_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/security_card"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp"
+                        android:background="#FF9800"
+                        android:textSize="18sp"
+                        android:text="@string/warning_caption" />
+
+                    <TextView
+                        android:id="@+id/warning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        tools:text="Short keyboard patterns are easy to guess." />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/information_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/warning_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/banner_color"
+                        android:textSize="18sp"
+                        android:text="@string/information_caption" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/basic_score_title" />
+
+                    <TextView
+                        android:id="@+id/basic_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="3 / 4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/entropy_title" />
+
+                    <TextView
+                        android:id="@+id/entropy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="189,156" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/random_title" />
+
+                    <TextView
+                        android:id="@+id/random"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="true" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/suggestions_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/information_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/banner_color"
+                        android:textSize="18sp"
+                        android:text="@string/suggestions_caption" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/suggestions_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:focusable="false" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/matches_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/suggestions_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/banner_color"
+                        android:textSize="18sp"
+                        android:text="@string/matches_caption" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/matches_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:focusable="false" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cracking_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/matches_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/banner_color"
+                        android:textSize="18sp"
+                        android:text="@string/cracking_caption" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/guesses_title" />
+
+                    <TextView
+                        android:id="@+id/guesses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="56836" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/offline_md5_title" />
+
+                    <TextView
+                        android:id="@+id/offline_md5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="Instant" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/offline_sha512_title" />
+
+                    <TextView
+                        android:id="@+id/offline_sha512"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="Instant" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/offline_bcrypt10_title" />
+
+                    <TextView
+                        android:id="@+id/offline_bcrypt10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="2 seconds" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/offline_bcrypt14_title" />
+
+                    <TextView
+                        android:id="@+id/offline_bcrypt14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="14 seconds" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/online_unthrottled_title" />
+
+                    <TextView
+                        android:id="@+id/online_unthrottled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="9 minutes" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="@dimen/customTitle"
+                        android:text="@string/online_throttled_title" />
+
+                    <TextView
+                        android:id="@+id/online_throttled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:paddingStart="35dp"
+                        android:paddingEnd="35dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="@dimen/customEntry"
+                        tools:text="7 hours" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:layout_constraintTop_toBottomOf="@id/cracking_container" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
