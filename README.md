@@ -19,7 +19,7 @@
 ## About this project
 Welcome to the most intelligent password evaluator app 'Pazzword'.
 
-It analyzes passwords using the open source library '[nbvcxz](https://github.com/GoSimpleLLC/nbvcxz)', a Java adaption of '[zxcvbn](https://github.com/dropbox/zxcvbn)' by Dropbox.
+It analyzes passwords using the open source library '[nbvcxz](https://github.com/GoSimpleLLC/nbvcxz)', a Java adaptation of '[zxcvbn](https://github.com/dropbox/zxcvbn)' by Dropbox.
 
 In comparison to other password evaluator tools this secure and flexible tool uses algorithms for pattern matching and conservative estimation to give you the best results currently possible. It recognizes and weighs 30.000 common passwords, common names & surnames, most english words and common patterns like dates, repeats, sequences, keyboard patterns and l33t speak.
 For more information visit https://github.com/dropbox/zxcvbn.
