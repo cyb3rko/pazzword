@@ -3,6 +3,7 @@ package com.cyb3rko.pazzword.fragments
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentGeneratorBinding
@@ -38,6 +40,7 @@ class GeneratorFragment : Fragment() {
         return root
     }
 
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.typeToggleGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
@@ -66,7 +69,7 @@ class GeneratorFragment : Fragment() {
         val adapter = ArrayAdapter(myContext, R.layout.password_type_item, items)
         binding.passwordTypeInput.apply {
             setAdapter(adapter)
-            setText(items[0])
+            setText(items[0], false)
             setOnItemClickListener { _, _, i, _ ->
                 selectedPasswordType = when (i) {
                     0 -> Generator.CharacterTypes.ALPHANUMERIC

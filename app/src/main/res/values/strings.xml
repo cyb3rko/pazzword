@@ -37,6 +37,7 @@
     <string name="passphrase">Passphrase</string>
     <string name="password">Password</string>
     <string name="delimiter">Delimiter</string>
+    <string name="password_type">Password Type</string>
     <string-array name="password_types">
         <item>Alphanumeric</item>
         <item>Alpha</item>

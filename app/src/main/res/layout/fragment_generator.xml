@@ -74,7 +74,8 @@
         app:layout_constraintStart_toStartOf="@id/slider"
         app:layout_constraintEnd_toEndOf="@id/slider"
         android:visibility="gone"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        android:hint="@string/password_type"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/password_type_input"
