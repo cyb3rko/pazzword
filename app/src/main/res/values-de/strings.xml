@@ -33,7 +33,19 @@
     <string name="top200_passwords_source">Quelle: nordpass.com</string>
     <string name="top200_passwords_censored">Schimpfwörter zensiert mit \'*\'</string>
 
-    <string name="clipboard_info">Password in Zwischenablage kopiert</string>
+    <string name="passphrase">Passphrase</string>
+    <string name="password">Passwort</string>
+    <string name="delimiter">Trennzeichen</string>
+    <string-array name="password_types">
+        <item>Alphanumerisch</item>
+        <item>Alpha</item>
+        <item>Alphanumerisch + Symbole</item>
+        <item>Numerisch</item>
+    </string-array>
+    <string name="length">Länge</string>
+    <string name="generate">Generieren</string>
+
+    <string name="clipboard_info">In Zwischenablage kopiert</string>
 
     <string name="feedback_bug_report">Feedback / Bugmeldung</string>
     <string name="about_icons_title">Benutzte Icons</string>

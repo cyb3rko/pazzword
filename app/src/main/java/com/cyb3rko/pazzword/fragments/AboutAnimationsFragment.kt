@@ -23,7 +23,8 @@ class AboutAnimationsFragment : Fragment() {
         val information = listOf(
             Triple("Password Unlock", "JA Studio", "https://lottiefiles.com/67204-password-unlock"),
             Triple("Lock CPU (Cyber Security)", "Ision Industries", "https://lottiefiles.com/34705-lock-cpu-cyber-security"),
-            Triple("Unlocking", "LottieFiles", "https://lottiefiles.com/13164-unlocking")
+            Triple("Unlocking", "LottieFiles", "https://lottiefiles.com/13164-unlocking"),
+            Triple("robot process automation", "Scott A", "https://lottiefiles.com/23491-robot-process-automation")
         )
         val view = ScrollView(myContext)
         val linearLayout = LinearLayout(myContext)
