@@ -69,4 +69,5 @@ dependencies {
     implementation "com.mikepenz:aboutlibraries:$about_libraries_version"
     implementation 'me.gosimple:nbvcxz:1.5.0'
     implementation 'io.github.medyo:android-about-page:2.0.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
 }
