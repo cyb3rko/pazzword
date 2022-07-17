@@ -17,7 +17,6 @@ import com.cyb3rko.pazzword.databinding.FragmentAnalyzeBinding
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.util.*
 import kotlin.math.round
 import me.gosimple.nbvcxz.Nbvcxz
 import me.gosimple.nbvcxz.matching.match.Match
@@ -41,18 +40,21 @@ class AnalyzeFragment : Fragment() {
         myContext = requireContext()
 
         binding.searchInput.setOnKeyListener { v, keyCode, event ->
-            hideKeyboard()
-            GlobalScope.launch {
-                if (!this@AnalyzeFragment::nbvcxz.isInitialized) initializeNbvcxz()
-                val text = (v as TextInputEditText).text.toString()
-                if (text.isNotBlank() && keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
-                    activity?.runOnUiThread {
-                        hideWaitingAnimation()
-                        estimatePassword(text)
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
+                hideKeyboard()
+                GlobalScope.launch {
+                    if (!this@AnalyzeFragment::nbvcxz.isInitialized) initializeNbvcxz()
+                    val text = (v as TextInputEditText).text.toString()
+                    if (text.isNotBlank() && keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
+                        activity?.runOnUiThread {
+                            hideWaitingAnimation()
+                            estimatePassword(text)
+                        }
                     }
                 }
+                return@setOnKeyListener true
             }
-            return@setOnKeyListener true
+            false
         }
 
         return root
