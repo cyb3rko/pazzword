@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentAnalyzeBinding
@@ -47,12 +48,10 @@ class AnalyzeFragment : Fragment() {
                 hideKeyboard()
                 val text = (v as TextInputEditText).text.toString()
                 if (text.isNotBlank()) {
-                    GlobalScope.launch {
+                    lifecycleScope.launch {
                         if (!this@AnalyzeFragment::nbvcxz.isInitialized) initializeNbvcxz()
-                        activity?.runOnUiThread {
-                            hideWaitingAnimation()
-                            estimatePassword(text)
-                        }
+                        hideWaitingAnimation()
+                        estimatePassword(text)
                     }
                 }
                 return@setOnKeyListener true
