@@ -10,13 +10,18 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.cyb3rko.pazzword.BuildConfig
 import com.cyb3rko.pazzword.R
+import com.cyb3rko.pazzword.openURL
 import com.mikepenz.aboutlibraries.LibsBuilder
 import mehdi.sakout.aboutpage.AboutPage
 import mehdi.sakout.aboutpage.Element
 
 class AboutFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
         return AboutPage(context)
             .setImage(R.mipmap.ic_launcher_foreground)
@@ -61,12 +66,12 @@ class AboutFragment : Fragment() {
             .create()
     }
 
-    private fun openYouTubeProfile(): View.OnClickListener {
-        return View.OnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/channel/UCue_SZXdF8yZByavetBU1ZQ"))) }
+    private fun openYouTubeProfile() = View.OnClickListener {
+        openURL("https://youtube.com/channel/UCue_SZXdF8yZByavetBU1ZQ")
     }
 
-    private fun showChangelog(): View.OnClickListener {
-        return View.OnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/cyb3rko/pazzword/releases"))) }
+    private fun showChangelog() = View.OnClickListener {
+        openURL("https://github.com/cyb3rko/pazzword/releases")
     }
 
     private fun showLibraries(): View.OnClickListener {
@@ -89,24 +94,24 @@ class AboutFragment : Fragment() {
         }
     }
 
-    private fun showIcons(): View.OnClickListener {
-        return View.OnClickListener { findNavController().navigate(R.id.navigation_about_icons) }
+    private fun showIcons() = View.OnClickListener {
+        findNavController().navigate(R.id.navigation_about_icons)
     }
 
-    private fun showAnimations(): View.OnClickListener {
-        return View.OnClickListener { findNavController().navigate(R.id.navigation_about_animations) }
+    private fun showAnimations() = View.OnClickListener {
+        findNavController().navigate(R.id.navigation_about_animations)
     }
 
-    private fun openGithubFeedback(): View.OnClickListener {
-        return View.OnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/cyb3rko/pazzword/"))) }
+    private fun openGithubFeedback() = View.OnClickListener {
+        openURL("https://github.com/cyb3rko/pazzword")
     }
 
-    private fun openGithubProfile(): View.OnClickListener {
-        return View.OnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/cyb3rko/"))) }
+    private fun openGithubProfile() = View.OnClickListener {
+        openURL("https://github.com/cyb3rko")
     }
 
-    private fun openInstaPage(): View.OnClickListener {
-        return View.OnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/_u/cyb3rko"))) }
+    private fun openInstaPage() = View.OnClickListener {
+        openURL("https://instagram.com/_u/cyb3rko")
     }
 
     private fun writeEmail(): View.OnClickListener {

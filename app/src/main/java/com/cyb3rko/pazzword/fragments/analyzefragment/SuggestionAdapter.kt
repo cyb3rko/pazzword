@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cyb3rko.pazzword.R
 import com.google.android.material.divider.MaterialDivider
 
-class SuggestionAdapter(private var messages: List<String>): RecyclerView.Adapter<SuggestionAdapter.ViewHolder>() {
+class SuggestionAdapter(
+    private var messages: List<String>
+): RecyclerView.Adapter<SuggestionAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.text_view)
@@ -16,7 +18,8 @@ class SuggestionAdapter(private var messages: List<String>): RecyclerView.Adapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.suggestion_item, parent, false)
+        val v = LayoutInflater.from(parent.context)
+            .inflate(R.layout.suggestion_item, parent, false)
         return ViewHolder(v)
     }
 

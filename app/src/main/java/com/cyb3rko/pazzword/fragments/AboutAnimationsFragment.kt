@@ -1,7 +1,5 @@
 package com.cyb3rko.pazzword.fragments
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -15,16 +13,37 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.cyb3rko.pazzword.R
+import com.cyb3rko.pazzword.openURL
 
 class AboutAnimationsFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         val myContext = requireContext()
         val information = listOf(
-            Triple("Password Unlock", "JA Studio", "https://lottiefiles.com/67204-password-unlock"),
-            Triple("Lock CPU (Cyber Security)", "Ision Industries", "https://lottiefiles.com/34705-lock-cpu-cyber-security"),
-            Triple("Unlocking", "LottieFiles", "https://lottiefiles.com/13164-unlocking"),
-            Triple("robot process automation", "Scott A", "https://lottiefiles.com/23491-robot-process-automation")
+            Triple(
+                "Password Unlock",
+                "JA Studio",
+                "https://lottiefiles.com/67204-password-unlock"
+            ),
+            Triple(
+                "Lock CPU (Cyber Security)",
+                "Ision Industries",
+                "https://lottiefiles.com/34705-lock-cpu-cyber-security"
+            ),
+            Triple(
+                "Unlocking",
+                "LottieFiles",
+                "https://lottiefiles.com/13164-unlocking"
+            ),
+            Triple(
+                "robot process automation",
+                "Scott A",
+                "https://lottiefiles.com/23491-robot-process-automation"
+            )
         )
         val view = ScrollView(myContext)
         val linearLayout = LinearLayout(myContext)
@@ -37,7 +56,7 @@ class AboutAnimationsFragment : Fragment() {
             val spannableString = SpannableString(text)
             val clickableSpan = object: ClickableSpan() {
                 override fun onClick(widget: View) {
-                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it.third)))
+                    openURL(it.third)
                 }
             }
             spannableString.setSpan(clickableSpan, 0, it.first.length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)

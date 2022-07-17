@@ -7,24 +7,23 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentAnalyzeBinding
+import com.cyb3rko.pazzword.hideKeyboard
+import com.cyb3rko.pazzword.round
 import com.google.android.material.textfield.TextInputEditText
+import java.math.BigDecimal
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlin.math.round
 import me.gosimple.nbvcxz.Nbvcxz
 import me.gosimple.nbvcxz.matching.match.Match
 import me.gosimple.nbvcxz.resources.*
 import me.gosimple.nbvcxz.resources.Dictionary
 import me.gosimple.nbvcxz.scoring.Result
 import me.gosimple.nbvcxz.scoring.TimeEstimate
-import java.math.BigDecimal
 
 class AnalyzeFragment : Fragment() {
     private var _binding: FragmentAnalyzeBinding? = null
@@ -34,7 +33,11 @@ class AnalyzeFragment : Fragment() {
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentAnalyzeBinding.inflate(inflater, container, false)
         val root = binding.root
         myContext = requireContext()
@@ -42,10 +45,10 @@ class AnalyzeFragment : Fragment() {
         binding.searchInput.setOnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
                 hideKeyboard()
-                GlobalScope.launch {
-                    if (!this@AnalyzeFragment::nbvcxz.isInitialized) initializeNbvcxz()
-                    val text = (v as TextInputEditText).text.toString()
-                    if (text.isNotBlank() && keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
+                val text = (v as TextInputEditText).text.toString()
+                if (text.isNotBlank()) {
+                    GlobalScope.launch {
+                        if (!this@AnalyzeFragment::nbvcxz.isInitialized) initializeNbvcxz()
                         activity?.runOnUiThread {
                             hideWaitingAnimation()
                             estimatePassword(text)
@@ -216,21 +219,6 @@ class AnalyzeFragment : Fragment() {
             securityText.text = text
             securityCard.visibility = View.VISIBLE
         }
-    }
-
-    private fun hideKeyboard() {
-        val imm = requireActivity().getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE) as InputMethodManager
-        var view = requireActivity().currentFocus
-        if (view == null) {
-            view = View(activity)
-        }
-        imm.hideSoftInputFromWindow(view.windowToken, 0)
-    }
-
-    private fun Double.round(decimals: Int): Double {
-        var multiplier = 1.0
-        repeat(decimals) { multiplier *= 10 }
-        return round(this * multiplier) / multiplier
     }
 
     override fun onDestroyView() {

@@ -33,6 +33,7 @@
     <string name="top200_passwords_caption">Top 200 most common passwords of 2020</string>
     <string name="top200_passwords_source">Source: nordpass.com</string>
     <string name="top200_passwords_censored">Swear words censored with \'*\'</string>
+    <string name="top200_passwords_clipboard_label">Common Password</string>
 
     <string name="passphrase">Passphrase</string>
     <string name="password">Password</string>

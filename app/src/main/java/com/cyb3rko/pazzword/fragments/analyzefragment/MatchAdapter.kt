@@ -28,7 +28,8 @@ class MatchAdapter(
 
     @SuppressLint("CheckResult")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.match_item, parent, false)
+        val v = LayoutInflater.from(parent.context)
+            .inflate(R.layout.match_item, parent, false)
         v.setOnClickListener {
             val position = recycler.getChildLayoutPosition(it)
             val match = matches[position]

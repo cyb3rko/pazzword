@@ -1,7 +1,5 @@
 package com.cyb3rko.pazzword.fragments
 
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
@@ -10,11 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentGeneratorBinding
+import com.cyb3rko.pazzword.showClipboardToast
+import com.cyb3rko.pazzword.storeToClipboard
 import me.gosimple.nbvcxz.resources.Generator
 
 class GeneratorFragment : Fragment() {
@@ -32,7 +31,11 @@ class GeneratorFragment : Fragment() {
         const val TYPE_PASSWORD = 2
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentGeneratorBinding.inflate(inflater, container, false)
         val root = binding.root
         myContext = requireContext()
@@ -43,7 +46,7 @@ class GeneratorFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.typeToggleGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
+        binding.typeToggleGroup.addOnButtonCheckedListener { _, checkedId, _ ->
             when (checkedId) {
                 R.id.passphrase_toggle -> {
                     selectedType = TYPE_PASSPHRASE
@@ -130,12 +133,9 @@ class GeneratorFragment : Fragment() {
 
     private fun storeToClipboard(text: String) {
         val label = getString(if (selectedType == TYPE_PASSPHRASE) R.string.passphrase else R.string.password)
-        val clip = ClipData.newPlainText(label, text)
-        (myContext.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).setPrimaryClip(clip)
-        showClipboardToast()
+        storeToClipboard(label, text)
+        showClipboardToast(label.lowercase())
     }
-
-    private fun showClipboardToast() = Toast.makeText(myContext, R.string.clipboard_info, Toast.LENGTH_SHORT).show()
 
     override fun onDestroyView() {
         super.onDestroyView()

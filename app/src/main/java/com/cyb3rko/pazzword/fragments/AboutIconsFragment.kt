@@ -10,10 +10,18 @@ import com.cyb3rko.pazzword.R
 
 class AboutIconsFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val aboutIcons = AboutIcons(requireContext(), R.drawable::class.java).setTitle(getString(R.string.about_icons_title))
+        val aboutIcons = AboutIcons(
+            requireContext(),
+            R.drawable::class.java
+        ).setTitle(getString(R.string.about_icons_title))
+
         return aboutIcons.get()
     }
 }
