@@ -19,7 +19,8 @@ class AboutIconsFragment : Fragment() {
 
         val aboutIcons = AboutIcons(
             requireContext(),
-            R.drawable::class.java
+            R.drawable::class.java,
+            parentFragmentManager
         ).setTitle(getString(R.string.about_icons_title))
 
         return aboutIcons.get()
