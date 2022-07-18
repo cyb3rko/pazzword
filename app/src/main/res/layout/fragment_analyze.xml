@@ -7,7 +7,7 @@
     tools:context=".fragments.analyzefragment.AnalyzeFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/text_input_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -32,8 +32,7 @@
             android:singleLine="true"
             android:inputType="textPassword"
             android:hint="@string/password_input_hint"
-            android:imeOptions="actionGo"
-            tools:ignore="HardcodedText" />
+            android:imeOptions="actionGo" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +43,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        app:layout_constraintTop_toBottomOf="@id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -77,7 +76,8 @@
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp">
+            android:layout_marginEnd="20dp"
+            android:paddingBottom="25dp">
 
             <Space
                 android:id="@+id/space1"
@@ -539,11 +539,6 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                app:layout_constraintTop_toBottomOf="@id/cracking_container" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

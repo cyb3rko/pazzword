@@ -47,7 +47,7 @@
         <item>Alphanumerisch + Symbole</item>
         <item>Numerisch</item>
     </string-array>
-    <string name="length">Länge</string>
+    <string name="length">Länge%1$s</string>
     <string name="generate">Generieren</string>
 
     <string name="clipboard_info">%1$s in Zwischenablage kopiert</string>

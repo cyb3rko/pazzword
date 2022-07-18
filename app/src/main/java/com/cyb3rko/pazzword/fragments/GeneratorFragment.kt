@@ -14,6 +14,7 @@ import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentGeneratorBinding
 import com.cyb3rko.pazzword.showClipboardToast
 import com.cyb3rko.pazzword.storeToClipboard
+import com.google.android.material.slider.Slider
 import me.gosimple.nbvcxz.resources.Generator
 
 class GeneratorFragment : Fragment() {
@@ -94,6 +95,14 @@ class GeneratorFragment : Fragment() {
         binding.output.setOnClickListener {
             storeToClipboard((it as Button).text.toString())
         }
+
+        binding.slider.addOnSliderTouchListener(object: Slider.OnSliderTouchListener {
+            override fun onStartTrackingTouch(slider: Slider) {}
+
+            override fun onStopTrackingTouch(slider: Slider) {
+                updateSliderLengthText(slider.value.toInt())
+            }
+        })
     }
 
     private fun showPassphraseItems(visible: Boolean) {
@@ -105,6 +114,7 @@ class GeneratorFragment : Fragment() {
                 slider.valueFrom = 3f
                 slider.value = 3f
             }
+            updateSliderLengthText(3)
         }
     }
 
@@ -117,6 +127,7 @@ class GeneratorFragment : Fragment() {
                 slider.valueFrom = 6f
                 slider.value = 12f
             }
+            updateSliderLengthText(12)
         }
     }
 
@@ -140,6 +151,10 @@ class GeneratorFragment : Fragment() {
             R.string.password_clipboard
         })
         showClipboardToast(clipboardText)
+    }
+
+    private fun updateSliderLengthText(length: Int) {
+        binding.sliderText.text = getString(R.string.length, ": $length")
     }
 
     override fun onDestroyView() {
