@@ -52,10 +52,6 @@ class AboutFragment : Fragment() {
                     .setOnClickListener(writeEmail())
             )
             .addItem(
-                Element().setTitle(getString(R.string.about_element_youtube_text)).setIconDrawable(R.drawable.about_icon_youtube)
-                    .setIconTint(R.color.about_youtube_color).setOnClickListener(openYouTubeProfile())
-            )
-            .addItem(
                 Element().setTitle(getString(R.string.about_element_github_text))
                     .setIconDrawable(R.drawable.about_icon_github).setOnClickListener(openGithubProfile())
             )
@@ -64,10 +60,6 @@ class AboutFragment : Fragment() {
                     .setIconTint(R.color.about_instagram_color).setOnClickListener(openInstaPage())
             )
             .create()
-    }
-
-    private fun openYouTubeProfile() = View.OnClickListener {
-        openURL("https://youtube.com/channel/UCue_SZXdF8yZByavetBU1ZQ")
     }
 
     private fun showChangelog() = View.OnClickListener {
