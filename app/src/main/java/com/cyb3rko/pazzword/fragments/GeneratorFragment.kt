@@ -134,7 +134,12 @@ class GeneratorFragment : Fragment() {
     private fun storeToClipboard(text: String) {
         val label = getString(if (selectedType == TYPE_PASSPHRASE) R.string.passphrase else R.string.password)
         storeToClipboard(label, text)
-        showClipboardToast(label.lowercase())
+        val clipboardText = getString(if (selectedType == TYPE_PASSPHRASE) {
+            R.string.passphrase_clipboard
+        } else {
+            R.string.password_clipboard
+        })
+        showClipboardToast(clipboardText)
     }
 
     override fun onDestroyView() {

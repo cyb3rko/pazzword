@@ -34,9 +34,12 @@
     <string name="top200_passwords_source">Source: nordpass.com</string>
     <string name="top200_passwords_censored">Swear words censored with \'*\'</string>
     <string name="top200_passwords_clipboard_label">Common Password</string>
+    <string name="top200_passwords_toast_label">password</string>
 
     <string name="passphrase">Passphrase</string>
     <string name="password">Password</string>
+    <string name="passphrase_clipboard">passphrase</string>
+    <string name="password_clipboard">password</string>
     <string name="delimiter">Delimiter</string>
     <string name="password_type">Password Type</string>
     <string-array name="password_types">
@@ -48,7 +51,7 @@
     <string name="length">Length</string>
     <string name="generate">Generate</string>
 
-    <string name="clipboard_info">Copied to clipboard</string>
+    <string name="clipboard_info">Copied %1$s to clipboard</string>
 
     <string name="feedback_bug_report">Feedback / Bug Report</string>
     <string name="about_icons_title">Used Icons</string>

@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentRankingBinding
+import com.cyb3rko.pazzword.showClipboardToast
 import com.cyb3rko.pazzword.storeToClipboard
 
 class RankingFragment : Fragment() {
@@ -39,6 +40,7 @@ class RankingFragment : Fragment() {
         binding.list.setOnItemClickListener { parent, _, position, _ ->
             val password = (parent.getItemAtPosition(position) as String).split(" ")[1]
             storeToClipboard(getString(R.string.top200_passwords_clipboard_label), password)
+            showClipboardToast(getString(R.string.top200_passwords_toast_label))
         }
     }
 

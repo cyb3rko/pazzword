@@ -20,7 +20,7 @@ internal fun Fragment.showToast(message: String, length: Int = Toast.LENGTH_SHOR
 }
 
 internal fun Context.showClipboardToast(content: String) {
-    showToast("Copied $content to clipboard")
+    showToast(getString(R.string.clipboard_info, content))
 }
 
 internal fun Fragment.showClipboardToast(content: String) {
