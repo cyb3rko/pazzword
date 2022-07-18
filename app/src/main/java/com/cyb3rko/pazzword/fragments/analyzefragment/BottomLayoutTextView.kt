@@ -26,7 +26,7 @@ class BottomLayoutTextView(
             setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.customEntry))
             if (useMargins) newLayoutParams.setMargins(0, 4, 0, 0)
         } else {
-            setTextColor(ResourcesCompat.getColor(resources, R.color.text_color_secondary, context.theme))
+            setTextColor(ResourcesCompat.getColor(resources, R.color.textColorSecondary, context.theme))
             setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.customTitle))
             if (useMargins) newLayoutParams.setMargins(0, 20, 0, 0)
         }

@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_analyze, R.id.navigation_ranking, R.id.navigation_generator
             )
         )
+        setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
