@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.cyb3rko.pazzword.BuildConfig
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.openURL
-import com.mikepenz.aboutlibraries.LibsBuilder
+import com.cyb3rko.pazzword.showToast
 import mehdi.sakout.aboutpage.AboutPage
 import mehdi.sakout.aboutpage.Element
 
@@ -74,24 +74,8 @@ class AboutFragment : Fragment() {
         openURL("https://github.com/cyb3rko/pazzword/releases")
     }
 
-    private fun showLibraries(): View.OnClickListener {
-        return View.OnClickListener {
-            context?.let { trueContext ->
-                LibsBuilder()
-                    .withShowLoadingProgress(true)
-                    .withAboutVersionShownCode(false)
-                    .withAboutVersionShownName(false)
-                    .withAutoDetect(true)
-                    .withAboutIconShown(false)
-                    .withAboutVersionShown(false)
-                    .withVersionShown(true)
-                    .withLicenseDialog(true)
-                    .withLicenseShown(true)
-                    .withCheckCachedDetection(true)
-                    .withSortEnabled(true)
-                    .start(trueContext)
-            }
-        }
+    private fun showLibraries() = View.OnClickListener {
+        showToast("Coming back soon")
     }
 
     private fun showIcons() = View.OnClickListener {

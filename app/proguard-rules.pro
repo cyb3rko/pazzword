@@ -20,8 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class **.R$* {
-    <fields>;
-}
-
 -keep class me.gosimple.nbvcxz.matching.** { *; }
