@@ -29,7 +29,7 @@
     <string name="online_unthrottled_title">Online Ungedrosselt</string>
     <string name="online_throttled_title">Online Gedrosselt</string>
 
-    <string name="top200_passwords_caption">Top 200 der häufigsten Passwörter des Jahres 2020</string>
+    <string name="top200_passwords_caption">Top 200 der häufigsten Passwörter des Jahres 2021</string>
     <string name="top200_passwords_source">Quelle: nordpass.com</string>
     <string name="top200_passwords_censored">Schimpfwörter zensiert mit \'*\'</string>
     <string name="top200_passwords_clipboard_label">Häufiges Passwort</string>
