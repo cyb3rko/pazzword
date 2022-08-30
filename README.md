@@ -3,7 +3,6 @@
 [![release](https://img.shields.io/github/release/cyb3rko/pazzword.svg)](https://github.com/cyb3rko/pazzword/releases/latest)
 [![last commit](https://img.shields.io/github/last-commit/cyb3rko/pazzword?color=F34C9F)](https://github.com/cyb3rko/pazzword/commits/master)
 [![license](https://img.shields.io/github/license/cyb3rko/pazzword)](https://opensource.org/licenses/MIT)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fcyb3rko%2Fpazzword&count_bg=%23256AF5&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Repo+views&edge_flat=false)](https://hits.seeyoufarm.com)
 
 ![pazzword](https://socialify.git.ci/cyb3rko/pazzword/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&logo=https%3A%2F%2Fcdn.cyb3rko.de%2FApps%2FPazzword%2Fic_launcher_resized.png&owner=1&pattern=Signal&pulls=1&stargazers=1&theme=Dark)
 
@@ -30,7 +29,7 @@ Furthermore I'm still a student so the progress might not be as fast as on other
 You can also have a look at my other projects:  
 [My GitHub page](https://github.com/cyb3rko)
 
-[<img src=".github/images/download.png" width="230">](https://play.google.com/store/apps/details?id=com.cyb3rko.pazzword)
+<a href="https://play.google.com/store/apps/details?id=com.cyb3rko.pazzword"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Play Store" height="100"></a>
 
 <!-- ### Translation
 
