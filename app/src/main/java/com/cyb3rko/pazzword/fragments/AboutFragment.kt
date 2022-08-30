@@ -31,37 +31,58 @@ class AboutFragment : Fragment() {
             .setImage(R.mipmap.ic_launcher_foreground)
             .setDescription(getString(R.string.about_description))
             .addItem(
-                Element().setTitle(String.format(getString(R.string.about_element_version), BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE))
-                    .setIconDrawable(githubIcon).setOnClickListener(showChangelog())
+                Element(
+                    String.format(
+                        getString(R.string.about_element_version),
+                        BuildConfig.VERSION_NAME,
+                        BuildConfig.VERSION_CODE
+                    ),
+                    githubIcon
+                ).setOnClickListener(showChangelog())
             )
             .addGroup(getString(R.string.about_group_legal))
             .addItem(
-                Element().setTitle(getString(R.string.about_element_libraries)).setIconDrawable(R.drawable._ic_libraries)
-                    .setOnClickListener(showLibraries())
+                Element(
+                    getString(R.string.about_element_libraries),
+                    R.drawable._ic_libraries
+                ).setOnClickListener(showLibraries())
             )
             .addItem(
-                Element().setTitle(getString(R.string.about_element_icons)).setIconDrawable(R.drawable._ic_question).setOnClickListener(showIcons())
+                Element(
+                    getString(R.string.about_element_icons),
+                    R.drawable._ic_question
+                ).setOnClickListener(showIcons())
             )
             .addItem(
-                Element().setTitle(getString(R.string.about_element_animations)).setIconDrawable(R.drawable._ic_question)
-                    .setOnClickListener(showAnimations())
+                Element(
+                    getString(R.string.about_element_animations),
+                    R.drawable._ic_question
+                ).setOnClickListener(showAnimations())
             )
             .addGroup(getString(R.string.about_group_connect))
             .addItem(
-                Element().setTitle(getString(R.string.about_element_feedback_text)).setIconDrawable(githubIcon)
-                    .setOnClickListener(openGithubFeedback())
+                Element(
+                    getString(R.string.about_element_feedback_text),
+                    githubIcon
+                ).setOnClickListener(openGithubFeedback())
             )
             .addItem(
-                Element().setTitle(getString(R.string.about_element_email_text)).setIconDrawable(emailIcon)
-                    .setOnClickListener(writeEmail())
+                Element(
+                    getString(R.string.about_element_email_text),
+                    emailIcon
+                ).setOnClickListener(writeEmail())
             )
             .addItem(
-                Element().setTitle(getString(R.string.about_element_github_text))
-                    .setIconDrawable(githubIcon).setOnClickListener(openGithubProfile())
+                Element(
+                    getString(R.string.about_element_github_text),
+                    githubIcon
+                ).setOnClickListener(openGithubProfile())
             )
             .addItem(
-                Element().setTitle(getString(R.string.about_element_instagram_text)).setIconDrawable(instagramIcon)
-                    .setIconTint(instagramColor).setOnClickListener(openInstaPage())
+                Element(
+                    getString(R.string.about_element_instagram_text),
+                    instagramIcon
+                ).setIconTint(instagramColor).setOnClickListener(openInstaPage())
             )
             .create()
     }
@@ -94,15 +115,10 @@ class AboutFragment : Fragment() {
         openURL("https://instagram.com/_u/cyb3rko")
     }
 
-    private fun writeEmail(): View.OnClickListener {
-        return View.OnClickListener {
-            val intent = Intent().apply {
-                this.action = Intent.ACTION_SENDTO
-                this.type = "text/plain"
-                this.data = Uri.parse("mailto:")
-                this.putExtra(Intent.EXTRA_EMAIL, arrayOf("niko@cyb3rko.de"))
-            }
-            startActivity(intent)
+    private fun writeEmail() = View.OnClickListener {
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:niko@cyb3rko.de")
         }
+        startActivity(intent)
     }
 }
