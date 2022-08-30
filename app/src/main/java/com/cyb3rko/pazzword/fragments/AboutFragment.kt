@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.cyb3rko.pazzword.BuildConfig
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.openURL
-import com.cyb3rko.pazzword.showToast
+import com.mikepenz.aboutlibraries.LibsBuilder
 import mehdi.sakout.aboutpage.AboutPage
 import mehdi.sakout.aboutpage.Element
 
@@ -92,7 +92,15 @@ class AboutFragment : Fragment() {
     }
 
     private fun showLibraries() = View.OnClickListener {
-        showToast("Coming back soon")
+        context?.let { validContext ->
+            LibsBuilder()
+                .withLicenseShown(true)
+                .withAboutIconShown(false)
+                .withAboutVersionShown(false)
+                .withActivityTitle(getString(R.string.about_element_libraries))
+                .withSearchEnabled(true)
+                .start(validContext)
+        }
     }
 
     private fun showIcons() = View.OnClickListener {
