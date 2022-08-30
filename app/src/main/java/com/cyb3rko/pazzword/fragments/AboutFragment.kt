@@ -22,13 +22,17 @@ class AboutFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        val githubIcon = mehdi.sakout.aboutpage.R.drawable.about_icon_github
+        val emailIcon = mehdi.sakout.aboutpage.R.drawable.about_icon_email
+        val instagramIcon = mehdi.sakout.aboutpage.R.drawable.about_icon_instagram
+        val instagramColor = mehdi.sakout.aboutpage.R.color.about_instagram_color
 
         return AboutPage(context)
             .setImage(R.mipmap.ic_launcher_foreground)
             .setDescription(getString(R.string.about_description))
             .addItem(
                 Element().setTitle(String.format(getString(R.string.about_element_version), BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE))
-                    .setIconDrawable(R.drawable.about_icon_github).setOnClickListener(showChangelog())
+                    .setIconDrawable(githubIcon).setOnClickListener(showChangelog())
             )
             .addGroup(getString(R.string.about_group_legal))
             .addItem(
@@ -44,20 +48,20 @@ class AboutFragment : Fragment() {
             )
             .addGroup(getString(R.string.about_group_connect))
             .addItem(
-                Element().setTitle(getString(R.string.about_element_feedback_text)).setIconDrawable(R.drawable.about_icon_github)
+                Element().setTitle(getString(R.string.about_element_feedback_text)).setIconDrawable(githubIcon)
                     .setOnClickListener(openGithubFeedback())
             )
             .addItem(
-                Element().setTitle(getString(R.string.about_element_email_text)).setIconDrawable(R.drawable.about_icon_email)
+                Element().setTitle(getString(R.string.about_element_email_text)).setIconDrawable(emailIcon)
                     .setOnClickListener(writeEmail())
             )
             .addItem(
                 Element().setTitle(getString(R.string.about_element_github_text))
-                    .setIconDrawable(R.drawable.about_icon_github).setOnClickListener(openGithubProfile())
+                    .setIconDrawable(githubIcon).setOnClickListener(openGithubProfile())
             )
             .addItem(
-                Element().setTitle(getString(R.string.about_element_instagram_text)).setIconDrawable(R.drawable.about_icon_instagram)
-                    .setIconTint(R.color.about_instagram_color).setOnClickListener(openInstaPage())
+                Element().setTitle(getString(R.string.about_element_instagram_text)).setIconDrawable(instagramIcon)
+                    .setIconTint(instagramColor).setOnClickListener(openInstaPage())
             )
             .create()
     }
