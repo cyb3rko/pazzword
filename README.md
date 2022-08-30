@@ -47,7 +47,7 @@ Analyzing entered passwords with the following feedback:
 - estimated stability against cracking
 for the returned password.
 
-Accessing the 200 most common passwords of 2020 ([source](https://nordpass.com/most-common-passwords-list/)).
+Accessing the 200 most common passwords of 2021 ([source](https://nordpass.com/most-common-passwords-list/)).
 
 ## Screenshots
 
