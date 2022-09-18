@@ -17,11 +17,11 @@ android {
         }
     }
 
-    compileSdk 32
+    compileSdk 33
     defaultConfig {
         applicationId "com.cyb3rko.pazzword"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 5
         versionName "1.1.2"
     }
@@ -55,15 +55,15 @@ android {
 }
 
 dependencies {
-    def navigation_version = "2.5.1"
+    def navigation_version = "2.5.2"
 
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
     implementation "com.mikepenz:aboutlibraries-core:$aboutLibsVersion"
     implementation "com.mikepenz:aboutlibraries:$aboutLibsVersion"
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
     implementation 'com.airbnb.android:lottie:4.0.0'
@@ -71,5 +71,5 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'io.github.medyo:android-about-page:2.0.0'
     implementation 'me.gosimple:nbvcxz:1.5.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
 }
