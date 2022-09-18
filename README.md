@@ -4,7 +4,7 @@
 [![last commit](https://img.shields.io/github/last-commit/cyb3rko/pazzword?color=F34C9F)](https://github.com/cyb3rko/pazzword/commits/master)
 [![license](https://img.shields.io/github/license/cyb3rko/pazzword)](https://opensource.org/licenses/MIT)
 
-![pazzword](https://socialify.git.ci/cyb3rko/pazzword/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&logo=https%3A%2F%2Fcdn.cyb3rko.de%2FApps%2FPazzword%2Fic_launcher_resized.png&owner=1&pattern=Signal&pulls=1&stargazers=1&theme=Dark)
+![pazzword](https://socialify.git.ci/cyb3rko/pazzword/image?description=1&font=Inter&forks=1&issues=1&logo=https%3A%2F%2Fcdn.cyb3rko.de%2FApps%2FPazzword%2Fpazzword.png&owner=1&pattern=Signal&pulls=1&stargazers=1&theme=Dark)
 
 - [About this project](#about-this-project)  
     <!-- - [Translation](#translation) -->
