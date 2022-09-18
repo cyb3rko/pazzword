@@ -13,6 +13,20 @@
         <item>https://www.flaticon.com/free-icon/password-box-with-asterisks_48808</item>
     </string-array>
 
+    <string-array name="ic_hacker">
+        <item>Vitaly Gorbachev</item>
+        <item>flaticon.com</item>
+        <item>https://www.flaticon.com/free-icon/hacker_2165595</item>
+        <item>true</item>
+    </string-array>
+
+    <string-array name="ic_hacker_themed">
+        <item>Vitaly Gorbachev</item>
+        <item>flaticon.com</item>
+        <item>https://www.flaticon.com/free-icon/hacker_2165563</item>
+        <item>true</item>
+    </string-array>
+
     <string-array name="ic_libraries">
         <item>Freepik</item>
         <item>flaticon.com</item>
@@ -29,6 +43,13 @@
         <item>Freepik</item>
         <item>flaticon.com</item>
         <item>https://www.flaticon.com/free-icon/ranking_3487157</item>
+    </string-array>
+
+    <string-array name="ic_secure">
+        <item>Freepik</item>
+        <item>flaticon.com</item>
+        <item>https://www.flaticon.com/free-icon/insurance_3643948</item>
+        <item>true</item>
     </string-array>
 
 </resources>

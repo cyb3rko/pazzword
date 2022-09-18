@@ -21,3 +21,8 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class me.gosimple.nbvcxz.matching.** { *; }
+
+# For AboutIcons
+-keep class **.R$* {
+    <fields>;
+}
