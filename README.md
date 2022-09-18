@@ -1,5 +1,5 @@
 # Pazzword
-[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 [![release](https://img.shields.io/github/release/cyb3rko/pazzword.svg)](https://github.com/cyb3rko/pazzword/releases/latest)
 [![last commit](https://img.shields.io/github/last-commit/cyb3rko/pazzword?color=F34C9F)](https://github.com/cyb3rko/pazzword/commits/master)
 [![license](https://img.shields.io/github/license/cyb3rko/pazzword)](https://opensource.org/licenses/MIT)
