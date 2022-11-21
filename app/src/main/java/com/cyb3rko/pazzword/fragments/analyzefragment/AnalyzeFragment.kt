@@ -16,8 +16,8 @@ import com.cyb3rko.pazzword.databinding.FragmentAnalyzeBinding
 import com.cyb3rko.pazzword.hideKeyboard
 import com.cyb3rko.pazzword.round
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.Dispatchers
 import java.math.BigDecimal
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import me.gosimple.nbvcxz.Nbvcxz
 import me.gosimple.nbvcxz.matching.match.Match
@@ -48,9 +48,8 @@ class AnalyzeFragment : Fragment() {
                 hideKeyboard()
                 val text = (v as TextInputEditText).text.toString()
                 if (text.isNotBlank()) {
-                    lifecycleScope.launch {
+                    lifecycleScope.launch(Dispatchers.Default) {
                         if (!this@AnalyzeFragment::nbvcxz.isInitialized) initializeNbvcxz()
-                        hideWaitingAnimation()
                         estimatePassword(text)
                     }
                 }
@@ -88,8 +87,11 @@ class AnalyzeFragment : Fragment() {
 
     private fun estimatePassword(password: String) {
         val result = nbvcxz.estimate(password)
-        showResults(result, result.feedback)
-        binding.scrollView.smoothScrollTo(0,0)
+        requireActivity().runOnUiThread {
+            showResults(result, result.feedback)
+            hideWaitingAnimation()
+            binding.scrollView.smoothScrollTo(0,0)
+        }
     }
 
     private fun showResults(result: Result, feedback: Feedback) {
