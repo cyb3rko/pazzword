@@ -44,7 +44,8 @@ class GeneratorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.typeToggleGroup.addOnButtonCheckedListener { _, checkedId, _ ->
+        binding.typeToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
+            if (!isChecked) return@addOnButtonCheckedListener
             when (checkedId) {
                 R.id.passphrase_toggle -> {
                     selectedType = TYPE_PASSPHRASE
@@ -110,8 +111,8 @@ class GeneratorFragment : Fragment() {
                 slider.valueTo = 8f
                 slider.valueFrom = 3f
                 slider.value = 3f
+                updateSliderLengthText(3)
             }
-            updateSliderLengthText(3)
         }
     }
 
@@ -123,8 +124,8 @@ class GeneratorFragment : Fragment() {
                 slider.valueTo = 64f
                 slider.valueFrom = 6f
                 slider.value = 12f
+                updateSliderLengthText(12)
             }
-            updateSliderLengthText(12)
         }
     }
 
