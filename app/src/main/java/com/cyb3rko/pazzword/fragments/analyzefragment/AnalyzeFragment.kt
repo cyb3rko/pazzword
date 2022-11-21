@@ -185,14 +185,8 @@ class AnalyzeFragment : Fragment() {
 
     private fun fillMatches(matches: List<Match>) {
         binding.apply {
-            if (matchesRecycler.layoutManager == null) {
-                matchesRecycler.layoutManager = object: LinearLayoutManager(myContext) {
-                    override fun canScrollVertically(): Boolean {
-                        return false
-                    }
-                }
-            }
-            matchesRecycler.adapter = MatchAdapter(myContext, matchesRecycler, matches)
+            val matchesAdapter = MatchAdapter(myContext, matches)
+            matchesList.adapter = matchesAdapter
             matchesContainer.visibility = View.VISIBLE
         }
     }

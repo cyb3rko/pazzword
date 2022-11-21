@@ -350,13 +350,10 @@
                         android:textSize="18sp"
                         android:text="@string/matches_caption" />
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/matches_recycler"
+                    <ListView
+                        android:id="@+id/matches_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:textSize="16sp"
                         android:focusable="false" />
 
                 </LinearLayout>
