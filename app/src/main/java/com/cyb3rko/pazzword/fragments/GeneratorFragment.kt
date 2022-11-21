@@ -1,14 +1,12 @@
 package com.cyb3rko.pazzword.fragments
 
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentGeneratorBinding
@@ -44,7 +42,6 @@ class GeneratorFragment : Fragment() {
         return root
     }
 
-    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.typeToggleGroup.addOnButtonCheckedListener { _, checkedId, _ ->
