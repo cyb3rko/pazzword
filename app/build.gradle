@@ -37,8 +37,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled false
-            multiDexEnabled true
+            minifyEnabled true
             crunchPngs false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -66,11 +65,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.airbnb.android:lottie:5.2.0'
     implementation 'com.github.cyb3rko:about-icons:2.0.0'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'io.github.medyo:android-about-page:2.0.0'
     implementation 'me.gosimple:nbvcxz:1.5.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
 }
