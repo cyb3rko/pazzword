@@ -201,11 +201,21 @@ class AnalyzeFragment : Fragment() {
             binding.securityBanner.background
         }
         binding.apply {
-            securityBanner.background = if (secure) {
-                ResourcesCompat.getDrawable(resources, R.drawable.sec_banner_bg_green, activity?.theme)
-            } else {
-                ResourcesCompat.getDrawable(resources, R.drawable.sec_banner_bg_red, activity?.theme)
-            }
+            securityBanner.setBackgroundColor(
+                if (secure) {
+                    ResourcesCompat.getColor(
+                        resources,
+                        R.color.security_color_green,
+                        myContext.theme
+                    )
+                } else {
+                    ResourcesCompat.getColor(
+                        resources,
+                        R.color.security_color_red,
+                        myContext.theme
+                    )
+                }
+            )
             animationView.apply {
                 setAnimation(animation)
                 playAnimation()
