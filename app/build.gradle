@@ -14,6 +14,7 @@ android {
         targetSdk 33
         versionCode 7
         versionName "1.1.4"
+        resConfigs 'en', 'de'
     }
 
     signingConfigs {
