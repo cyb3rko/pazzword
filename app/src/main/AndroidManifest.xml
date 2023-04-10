@@ -20,6 +20,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Pazzword"
+            android:windowSoftInputMode="adjustPan"
             android:fitsSystemWindows="true">
 
             <intent-filter>
