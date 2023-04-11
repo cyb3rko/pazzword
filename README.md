@@ -1,14 +1,13 @@
 # Pazzword
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 [![release](https://img.shields.io/github/release/cyb3rko/pazzword.svg)](https://github.com/cyb3rko/pazzword/releases/latest)
-[![last commit](https://img.shields.io/github/last-commit/cyb3rko/pazzword?color=F34C9F)](https://github.com/cyb3rko/pazzword/commits/master)
-[![license](https://img.shields.io/github/license/cyb3rko/pazzword)](https://opensource.org/licenses/MIT)
-
-![pazzword](https://socialify.git.ci/cyb3rko/pazzword/image?description=1&font=Inter&forks=1&issues=1&logo=https%3A%2F%2Fcdn.cyb3rko.de%2FApps%2FPazzword%2Fpazzword.png&owner=1&pattern=Signal&pulls=1&stargazers=1&theme=Dark)
+[![license](https://img.shields.io/github/license/cyb3rko/pazzword)](https://www.apache.org/licenses/LICENSE-2.0)
+[![last commit](https://img.shields.io/github/last-commit/cyb3rko/pazzword?color=F34C9F)](https://github.com/cyb3rko/pazzword/commits/main)
 
 - [About this project](#about-this-project)  
     <!-- - [Translation](#translation) -->
 - [Features](#features)  
+- [Download](#download)
 - [Screenshots](#screenshots)   
 - [Contribute](#contribute)  
 - [License](#license)  
@@ -25,11 +24,6 @@ For more information visit https://github.com/dropbox/zxcvbn.
 
 You are welcomed to open new [issues](https://github.com/cyb3rko/pazzword/issues) and creating [pull requests](https://github.com/cyb3rko/pazzword/pulls) for improving code and implementing new features (see chapter [Contribute](#contribute)).  
 Furthermore I'm still a student so the progress might not be as fast as on other projects.
-
-You can also have a look at my other projects:  
-[My GitHub page](https://github.com/cyb3rko)
-
-<a href="https://play.google.com/store/apps/details?id=com.cyb3rko.pazzword"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Play Store" height="100"></a>
 
 <!-- ### Translation
 
@@ -49,10 +43,19 @@ for the returned password.
 
 Accessing the 200 most common passwords of 2021 ([source](https://nordpass.com/most-common-passwords-list/)).
 
+## Download
+
+F-Droid download link available soon
+
+[<img height="80" alt="Get it on PlayStore"
+src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+/>](https://play.google.com/store/apps/details?id=com.cyb3rko.pazzword)
+[<img height="80" src="https://raw.githubusercontent.com/gotify/android/master/download-badge.png"/>](https://github.com/cyb3rko/pazzword/releases)
+
 ## Screenshots
 
-|<img src=".github/images/screenshot_1.png" width="270">|<img src=".github/images/screenshot_2.png" width="270">|<img src=".github/images/screenshot_3.png" width="270">|
-|:---:|:---:|:---:|
+|<img src="metadata/en-US/images/phoneScreenshots/1.png" width="220">|<img src="metadata/en-US/images/phoneScreenshots/2.png" width="220">|<img src="metadata/en-US/images/phoneScreenshots/3.png" width="220">|<img src="metadata/en-US/images/phoneScreenshots/4.png" width="220">|
+|:---:|:---:|:---:|:---:|
 
 ## Contribute
 Of course I'm happy about any kind of contribution.
