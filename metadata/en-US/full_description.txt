@@ -1,0 +1,13 @@
+<b>About</b>
+Welcome to the most intelligent password evaluator app 'Pazzword'.
+
+It analyzes passwords using the open source library '<a href="https://github.com/GoSimpleLLC/nbvcxz">nbvcxz</a>', a Java adaptation of '<a href="https://github.com/dropbox/zxcvbn">zxcvbn</a>' by Dropbox.
+
+In comparison to other password evaluator tools this secure and flexible tool uses algorithms for pattern matching and conservative estimation to give you the best results currently possible. It recognizes and weighs 30.000 common passwords, common names & surnames, most english words and common patterns like dates, repeats, sequences, keyboard patterns and l33t speak. For more information visit <a href="https://github.com/dropbox/zxcvbn">https://github.com/dropbox/zxcvbn</a>.
+
+<b>Features</b>
+Analyzing entered passwords with the following feedback:
+
+<ul><li>a score</li><li>entropy</li><li>custom suggestions</li><li>found patterns and</li><li>estimated stability against cracking for the returned password.</li></ul>
+
+Accessing the 200 most common passwords of 2021 (<a href="https://nordpass.com/most-common-passwords-list">source</a>).
