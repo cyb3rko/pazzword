@@ -16,25 +16,11 @@ android {
         versionName "1.1.4"
         resConfigs 'en', 'de'
     }
-
-    signingConfigs {
-        signingConf {
-            Properties properties = new Properties()
-            properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-            storeFile file(properties.getProperty("signing.file"))
-            storePassword properties.getProperty("signing.password")
-            keyAlias properties.getProperty("signing.key.alias")
-            keyPassword properties.getProperty("signing.key.password")
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled true
             crunchPngs true
             shrinkResources true
-            signingConfig signingConfigs.signingConf
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -48,6 +34,20 @@ android {
     buildFeatures {
         viewBinding true
     }
+}
+
+if (project.hasProperty('sign')) {
+    android {
+        signingConfigs {
+            release {
+                storeFile file(System.getenv('KEYSTORE_FILE'))
+                storePassword System.getenv('KEYSTORE_PASSWD')
+                keyAlias System.getenv('KEYSTORE_KEY_ALIAS')
+                keyPassword System.getenv('KEYSTORE_KEY_PASSWD')
+            }
+        }
+    }
+    android.buildTypes.release.signingConfig android.signingConfigs.release
 }
 
 dependencies {
