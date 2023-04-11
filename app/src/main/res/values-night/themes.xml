@@ -37,4 +37,8 @@
 
     <style name="Theme.Pazzword" parent="Base.Theme.Pazzword" />
 
+    <style name="Theme.AboutPage" parent="about_About">
+        <item name="aboutBackground">@color/md_theme_dark_background</item>
+    </style>
+
 </resources>

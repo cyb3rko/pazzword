@@ -25,7 +25,7 @@ class AboutFragment : Fragment() {
         val githubIcon = mehdi.sakout.aboutpage.R.drawable.about_icon_github
         val emailIcon = mehdi.sakout.aboutpage.R.drawable.about_icon_email
 
-        return AboutPage(context)
+        return AboutPage(context, R.style.Theme_AboutPage)
             .setImage(R.mipmap.ic_launcher_foreground)
             .setDescription(getString(R.string.about_description))
             .addItem(
