@@ -37,6 +37,10 @@ android {
     }
 }
 
+aboutLibraries {
+    excludeFields = ['generated']
+}
+
 if (project.hasProperty('sign')) {
     android {
         signingConfigs {
