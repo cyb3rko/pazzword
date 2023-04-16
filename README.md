@@ -45,11 +45,12 @@ Accessing the 200 most common passwords of 2021 ([source](https://nordpass.com/m
 
 ## Download
 
-F-Droid download link available soon
-
 [<img height="80" alt="Get it on PlayStore"
 src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
 />](https://play.google.com/store/apps/details?id=com.cyb3rko.pazzword)
+[<img height="80" alt="Get it on F-Droid"
+src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+/>](https://f-droid.org/app/com.cyb3rko.pazzword)
 [<img height="80" src="https://raw.githubusercontent.com/gotify/android/master/download-badge.png"/>](https://github.com/cyb3rko/pazzword/releases)
 
 ## Screenshots
