@@ -28,6 +28,8 @@ import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentGeneratorBinding
 import com.cyb3rko.pazzword.showClipboardToast
 import com.cyb3rko.pazzword.storeToClipboard
+import com.cyb3rko.pazzword.generatorPassword
+import com.cyb3rko.pazzword.PasswordTypes
 import com.google.android.material.slider.Slider
 import me.gosimple.nbvcxz.resources.Generator
 
@@ -39,7 +41,7 @@ class GeneratorFragment : Fragment() {
     private val binding get() = _binding!!
 
     private var selectedType = 0
-    private var selectedPasswordType = Generator.CharacterTypes.ALPHANUMERIC
+    private var selectedPasswordType = PasswordTypes.ALPHANUMERIC
 
     companion object {
         const val TYPE_PASSPHRASE = 1
@@ -90,11 +92,11 @@ class GeneratorFragment : Fragment() {
             setText(items[0], false)
             setOnItemClickListener { _, _, i, _ ->
                 selectedPasswordType = when (i) {
-                    0 -> Generator.CharacterTypes.ALPHANUMERIC
-                    1 -> Generator.CharacterTypes.ALPHA
-                    2 -> Generator.CharacterTypes.ALPHANUMERICSYMBOL
-                    3 -> Generator.CharacterTypes.NUMERIC
-                    else -> Generator.CharacterTypes.ALPHANUMERIC
+                    0 -> PasswordTypes.ALPHANUMERIC
+                    1 -> PasswordTypes.ALPHA
+                    2 -> PasswordTypes.ALPHANUMERICSYMBOL
+                    3 -> PasswordTypes.NUMERIC
+                    else -> PasswordTypes.ALPHANUMERIC
                 }
             }
         }
@@ -140,7 +142,7 @@ class GeneratorFragment : Fragment() {
                 slider.valueTo = 64f
                 slider.valueFrom = 6f
                 slider.value = 12f
-                updateSliderLengthText(12)
+                updateSliderLengthText(binding.slider.value.toInt())
             }
         }
     }
@@ -153,7 +155,7 @@ class GeneratorFragment : Fragment() {
 
     private fun generatePassword() {
         val length = binding.slider.value
-        binding.output.text = Generator.generateRandomPassword(selectedPasswordType, length.toInt())
+        binding.output.text = generatorPassword(selectedPasswordType, length.toInt())
     }
 
     private fun storeToClipboard(text: String) {
