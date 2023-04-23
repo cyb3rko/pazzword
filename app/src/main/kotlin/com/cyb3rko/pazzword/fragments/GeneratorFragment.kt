@@ -32,6 +32,7 @@ import com.cyb3rko.pazzword.generatorPassword
 import com.cyb3rko.pazzword.PasswordTypes
 import com.google.android.material.slider.Slider
 import me.gosimple.nbvcxz.resources.Generator
+import android.util.Log
 
 class GeneratorFragment : Fragment() {
     private var _binding: FragmentGeneratorBinding? = null
@@ -96,6 +97,7 @@ class GeneratorFragment : Fragment() {
                     1 -> PasswordTypes.ALPHA
                     2 -> PasswordTypes.ALPHANUMERICSYMBOL
                     3 -> PasswordTypes.NUMERIC
+                    4 -> PasswordTypes.ALPHASPACE
                     else -> PasswordTypes.ALPHANUMERIC
                 }
             }
@@ -156,6 +158,7 @@ class GeneratorFragment : Fragment() {
     private fun generatePassword() {
         val length = binding.slider.value
         binding.output.text = generatorPassword(selectedPasswordType, length.toInt())
+        Log.d("INFO", "generatePassword: " + binding.output.text.toString())
     }
 
     private fun storeToClipboard(text: String) {

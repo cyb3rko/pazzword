@@ -99,12 +99,14 @@ internal fun generatorPassword(passwordType: PasswordTypes, length: Int): String
     val alphaNumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
     val alphaNumericSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()"
     val numeric = "1234567890"
+    val alphaSpace = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     val characters = when (passwordType) {
         PasswordTypes.ALPHA -> alpha
         PasswordTypes.ALPHANUMERIC -> alphaNumeric
         PasswordTypes.ALPHANUMERICSYMBOL -> alphaNumericSymbols
         PasswordTypes.NUMERIC -> numeric
+        PasswordTypes.ALPHASPACE -> alphaSpace
     }
 
     val characterLength = characters.length
@@ -129,6 +131,7 @@ enum class PasswordTypes {
     ALPHANUMERIC,
     ALPHANUMERICSYMBOL,
     NUMERIC,
+    ALPHASPACE
 }
 
 /*
