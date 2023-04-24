@@ -47,6 +47,7 @@
         <item>Alpha</item>
         <item>Alphanumeric + Symbols</item>
         <item>Numeric</item>
+        <item>Alpha + Space</item>
     </string-array>
     <string name="length">Length%1$s</string>
     <string name="generate">Generate</string>

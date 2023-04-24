@@ -17,6 +17,7 @@
 package com.cyb3rko.pazzword.fragments
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,8 +31,28 @@ import com.cyb3rko.pazzword.showClipboardToast
 import com.cyb3rko.pazzword.storeToClipboard
 import com.google.android.material.slider.Slider
 import me.gosimple.nbvcxz.resources.Generator
+import java.security.SecureRandom
 
 class GeneratorFragment : Fragment() {
+    companion object {
+        const val TYPE_PASSPHRASE = 1
+        const val TYPE_PASSWORD = 2
+
+        const val alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        const val alphaNumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+        const val alphaNumericSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()"
+        const val numeric = "1234567890"
+        const val alphaSpace = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
+
+    enum class PasswordTypes {
+        ALPHA,
+        ALPHANUMERIC,
+        ALPHANUMERICSYMBOL,
+        NUMERIC,
+        ALPHASPACE
+    }
+
     private var _binding: FragmentGeneratorBinding? = null
     private lateinit var myContext: Context
 
@@ -39,12 +60,7 @@ class GeneratorFragment : Fragment() {
     private val binding get() = _binding!!
 
     private var selectedType = 0
-    private var selectedPasswordType = Generator.CharacterTypes.ALPHANUMERIC
-
-    companion object {
-        const val TYPE_PASSPHRASE = 1
-        const val TYPE_PASSWORD = 2
-    }
+    private var selectedPasswordType = PasswordTypes.ALPHANUMERIC
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -90,11 +106,12 @@ class GeneratorFragment : Fragment() {
             setText(items[0], false)
             setOnItemClickListener { _, _, i, _ ->
                 selectedPasswordType = when (i) {
-                    0 -> Generator.CharacterTypes.ALPHANUMERIC
-                    1 -> Generator.CharacterTypes.ALPHA
-                    2 -> Generator.CharacterTypes.ALPHANUMERICSYMBOL
-                    3 -> Generator.CharacterTypes.NUMERIC
-                    else -> Generator.CharacterTypes.ALPHANUMERIC
+                    0 -> PasswordTypes.ALPHANUMERIC
+                    1 -> PasswordTypes.ALPHA
+                    2 -> PasswordTypes.ALPHANUMERICSYMBOL
+                    3 -> PasswordTypes.NUMERIC
+                    4 -> PasswordTypes.ALPHASPACE
+                    else -> PasswordTypes.ALPHANUMERIC
                 }
             }
         }
@@ -140,7 +157,7 @@ class GeneratorFragment : Fragment() {
                 slider.valueTo = 64f
                 slider.valueFrom = 6f
                 slider.value = 12f
-                updateSliderLengthText(12)
+                updateSliderLengthText(binding.slider.value.toInt())
             }
         }
     }
@@ -153,7 +170,7 @@ class GeneratorFragment : Fragment() {
 
     private fun generatePassword() {
         val length = binding.slider.value
-        binding.output.text = Generator.generateRandomPassword(selectedPasswordType, length.toInt())
+        binding.output.text = generatePassword(selectedPasswordType, length.toInt())
     }
 
     private fun storeToClipboard(text: String) {
@@ -169,6 +186,31 @@ class GeneratorFragment : Fragment() {
 
     private fun updateSliderLengthText(length: Int) {
         binding.sliderText.text = getString(R.string.length, ": $length")
+    }
+
+    private fun generatePassword(passwordType: PasswordTypes, length: Int): String {
+        val stringBuilder = StringBuilder()
+        val characters = when (passwordType) {
+            PasswordTypes.ALPHA -> alpha
+            PasswordTypes.ALPHANUMERIC -> alphaNumeric
+            PasswordTypes.ALPHANUMERICSYMBOL -> alphaNumericSymbols
+            PasswordTypes.NUMERIC -> numeric
+            PasswordTypes.ALPHASPACE -> alphaSpace
+        }
+
+        val characterLength = characters.length
+        val secureRandom = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            SecureRandom.getInstanceStrong()
+        } else {
+            SecureRandom()
+        }
+
+        repeat(length) {
+            val index = secureRandom.nextInt(characterLength)
+            stringBuilder.append(characters[index])
+        }
+
+        return stringBuilder.toString()
     }
 
     override fun onDestroyView() {
