@@ -25,7 +25,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import java.security.SecureRandom
 
 internal fun Context.showToast(message: String, length: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, length).show()
@@ -90,46 +89,4 @@ internal fun Double.round(decimals: Int): Double {
     var multiplier = 1.0
     repeat(decimals) { multiplier *= 10 }
     return kotlin.math.round(this * multiplier) / multiplier
-}
-
-internal fun generatorPassword(passwordType: PasswordTypes, length: Int): String {
-    val stringBuilder = StringBuilder()
-
-    val alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    val alphaNumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-    val alphaNumericSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()"
-    val numeric = "1234567890"
-    val alphaSpace = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-    val characters = when (passwordType) {
-        PasswordTypes.ALPHA -> alpha
-        PasswordTypes.ALPHANUMERIC -> alphaNumeric
-        PasswordTypes.ALPHANUMERICSYMBOL -> alphaNumericSymbols
-        PasswordTypes.NUMERIC -> numeric
-        PasswordTypes.ALPHASPACE -> alphaSpace
-    }
-
-    val characterLength = characters.length
-
-    // Obtain a strong SecureRandom implementation
-    val secureRandom = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        SecureRandom.getInstanceStrong()
-    } else {
-        SecureRandom()
-    }
-
-    for ( i in 0..length) {
-        val index = secureRandom.nextInt(characterLength)
-        stringBuilder.append(characters[index])
-    }
-
-    return stringBuilder.toString()
-}
-
-enum class PasswordTypes {
-    ALPHA,
-    ALPHANUMERIC,
-    ALPHANUMERICSYMBOL,
-    NUMERIC,
-    ALPHASPACE
 }
