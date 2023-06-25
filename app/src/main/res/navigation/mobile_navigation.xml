@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_generator"
-        android:name="com.cyb3rko.pazzword.fragments.GeneratorFragment"
+        android:name="com.cyb3rko.pazzword.fragments.generatorfragment.GeneratorFragment"
         android:label="@string/topbar_generator"
         tools:layout="@layout/fragment_generator" />
 

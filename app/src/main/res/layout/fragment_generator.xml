@@ -21,7 +21,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.GeneratorFragment">
+    tools:context=".fragments.generatorfragment.GeneratorFragment">
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/type_toggle_group"

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyb3rko.pazzword.fragments
+package com.cyb3rko.pazzword.fragments.generatorfragment
 
 import android.content.Context
 import android.os.Build
@@ -25,6 +25,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.cyb3rko.pazzword.R
 import com.cyb3rko.pazzword.databinding.FragmentGeneratorBinding
 import com.cyb3rko.pazzword.showClipboardToast
@@ -55,6 +56,7 @@ class GeneratorFragment : Fragment() {
 
     private var _binding: FragmentGeneratorBinding? = null
     private lateinit var myContext: Context
+    private val viewModel: GeneratorViewModel by activityViewModels()
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
@@ -90,13 +92,8 @@ class GeneratorFragment : Fragment() {
                     showPasswordItems(true)
                 }
             }
-            binding.apply {
-                animationView.visibility = View.GONE
-                animationView.cancelAnimation()
-                slider.visibility = View.VISIBLE
-                divider2.visibility = View.VISIBLE
-                output.visibility = View.VISIBLE
-            }
+            viewModel.animationShown = false
+            showInputElements()
         }
 
         val items = resources.getStringArray(R.array.password_types)
@@ -113,6 +110,7 @@ class GeneratorFragment : Fragment() {
                     4 -> PasswordTypes.ALPHASPACE
                     else -> PasswordTypes.ALPHANUMERIC
                 }
+                viewModel.passwordType = selectedPasswordType
             }
         }
 
@@ -131,9 +129,35 @@ class GeneratorFragment : Fragment() {
             override fun onStartTrackingTouch(slider: Slider) {}
 
             override fun onStopTrackingTouch(slider: Slider) {
+                if (selectedType == TYPE_PASSPHRASE) {
+                    viewModel.passphraseLength = slider.value
+                } else {
+                    viewModel.passwordLength = slider.value
+                }
                 updateSliderLengthText(slider.value.toInt())
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!viewModel.animationShown) {
+            showInputElements()
+            val items = resources.getStringArray(R.array.password_types)
+            val adapter = ArrayAdapter(myContext, R.layout.password_type_item, items)
+            binding.passwordTypeInput.setAdapter(adapter)
+            selectedPasswordType = viewModel.passwordType
+        }
+    }
+
+    private fun showInputElements() {
+        binding.apply {
+            animationView.visibility = View.GONE
+            animationView.cancelAnimation()
+            slider.visibility = View.VISIBLE
+            divider2.visibility = View.VISIBLE
+            output.visibility = View.VISIBLE
+        }
     }
 
     private fun showPassphraseItems(visible: Boolean) {
@@ -143,8 +167,8 @@ class GeneratorFragment : Fragment() {
             if (visible) {
                 slider.valueTo = 8f
                 slider.valueFrom = 3f
-                slider.value = 3f
-                updateSliderLengthText(3)
+                slider.value = viewModel.passphraseLength
+                updateSliderLengthText(viewModel.passphraseLength.toInt())
             }
         }
     }
@@ -156,8 +180,8 @@ class GeneratorFragment : Fragment() {
             if (visible) {
                 slider.valueTo = 64f
                 slider.valueFrom = 6f
-                slider.value = 12f
-                updateSliderLengthText(binding.slider.value.toInt())
+                slider.value = viewModel.passwordLength
+                updateSliderLengthText(viewModel.passwordLength.toInt())
             }
         }
     }
