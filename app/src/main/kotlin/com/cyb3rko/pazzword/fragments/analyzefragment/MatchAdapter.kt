@@ -45,7 +45,7 @@ class MatchAdapter(
         val matchDetails = match.details.lines().toMutableList()
         val type = matchDetails[0].split(": ")[1]
         val part = matchDetails[2].split(": ")[1]
-        matchDetails.removeFirst()
+        matchDetails.removeAt(0)
         @SuppressLint("SetTextI18n")
         itemView!!.findViewById<TextView>(R.id.text_view).text = "$type: $part"
 

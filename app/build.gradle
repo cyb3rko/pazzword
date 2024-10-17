@@ -12,8 +12,8 @@ android {
         applicationId "com.cyb3rko.pazzword"
         minSdk 21
         targetSdk 35
-        versionCode 11
-        versionName '1.2.3'
+        versionCode 12
+        versionName '1.2.4'
         resourceConfigurations += ['en', 'de']
         signingConfig signingConfigs.debug
     }
