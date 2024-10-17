@@ -7,14 +7,14 @@ plugins {
 android {
     namespace 'com.cyb3rko.pazzword'
 
-    compileSdk 33
+    compileSdk 35
     defaultConfig {
         applicationId "com.cyb3rko.pazzword"
         minSdk 21
-        targetSdk 33
+        targetSdk 35
         versionCode 11
         versionName '1.2.3'
-        resConfigs 'en', 'de'
+        resourceConfigurations += ['en', 'de']
         signingConfig signingConfigs.debug
     }
     buildTypes {
@@ -26,14 +26,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '17'
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 }
 
@@ -56,18 +57,18 @@ if (project.hasProperty('sign')) {
 }
 
 dependencies {
-    def navigation_version = "2.5.3"
+    def navigation_version = "2.8.3"
 
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
     implementation "com.mikepenz:aboutlibraries-core:$aboutLibsVersion"
     implementation "com.mikepenz:aboutlibraries:$aboutLibsVersion"
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.core:core-ktx:1.10.0'
-    implementation 'com.airbnb.android:lottie:6.0.0'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'com.airbnb.android:lottie:6.5.2'
     implementation 'com.github.cyb3rko:about-icons:2.0.0'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'io.github.medyo:android-about-page:2.0.0'
     implementation 'me.gosimple:nbvcxz:1.5.1'
 }
