@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Build Changelog
         id: github_release
-        uses: mikepenz/release-changelog-builder-action@v3
+        uses: mikepenz/release-changelog-builder-action@v5
         with:
           failOnError: true
           commitMode: true
@@ -81,18 +81,21 @@ jobs:
         env:
           CHANGELOG: ${{ steps.github_release.outputs.changelog }}
         run: echo "$CHANGELOG"
-        
-      - name: Checkout repo
-        uses: actions/checkout@v2
-          
-      - name: Setup JDK
-        uses: actions/setup-java@v3
-        with: 
-          distribution: 'zulu'
-          java-version: '11'
-          
+      
       - name: Set release name
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+        
+      - name: Checkout repo
+        uses: actions/checkout@v4
+          
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with: 
+          distribution: 'zulu'
+          java-version: '17'
+      
+      - name: Show root directory
+        run: ls
         
       - name: Build APK
         run: |
@@ -112,7 +115,7 @@ jobs:
           ls
         
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           name: "Version ${{ env.RELEASE_VERSION }}"
           body: ${{steps.github_release.outputs.changelog}}
