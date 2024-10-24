@@ -1,0 +1,33 @@
+[versions]
+agp = "8.7.1"
+kotlin = "2.0.20"
+
+appcompat = "1.7.0"
+constraintlayout = "2.1.4"
+coreKtx = "1.13.1"
+navigation = "2.8.3"
+lottie = "6.5.2"
+aboutIcons = "2.0.0"
+material = "1.12.0"
+aboutPage = "2.0.0"
+nbvcxz = "1.5.1"
+aboutlibraries = "11.2.3"
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+airbnb-lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+cyb3rko-about-icons = { module = "com.github.cyb3rko:about-icons", version.ref = "aboutIcons" }
+google-android-material = { module = "com.google.android.material:material", version.ref = "material" }
+gosimple-nbvcxz = { module = "me.gosimple:nbvcxz", version.ref = "nbvcxz" }
+medyo-android-about-page = { module = "io.github.medyo:android-about-page", version.ref = "aboutPage" }
+mikepenz-aboutlibraries = { module = "com.mikepenz:aboutlibraries", version.ref = "aboutlibraries" }
+mikepenz-aboutlibraries-core = { module = "com.mikepenz:aboutlibraries-core", version.ref = "aboutlibraries" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+aboutlibrariesPlugin = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "aboutlibraries" }
